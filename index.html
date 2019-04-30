@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Light / Dark Mode</h1>
+        <div class = "toggle-container">
+            <input type="checkbox" id="switch" name="theme"/><label for="switch">Toggle</label>
+        </div>
+
+    <p>Gimme the choice of darkness so that i can see the light</p>
+    </div>
+    
+    <script>
+        
+        var checkbox = document.querySelector('input[name=theme]');
+
+        checkbox.addEventListener('change',function(){
+            if(this.checked){
+                trans()
+                document.documentElement.setAttribute('data-theme','light')
+            }
+            else{
+                trans()
+                document.documentElement.setAttribute('data-theme','dark')
+               } 
+            })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transiton')
+            },1000);
+        }
+        
+    </script>
+</body>
+</html>
